@@ -5,7 +5,7 @@
 ### 克隆到本地
 
 ```bash
-git clone --recurse-submodules https://github.com/1037827920/testcase-cgroup.git
+git clone https://github.com/1037827920/testcase-cgroup.git
 ```
 
 ### 安装必要的工具
