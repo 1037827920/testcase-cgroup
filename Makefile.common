@@ -1,0 +1,3 @@
+CFLAGS        += -Wall -g -I$(TST_TS_TOPDIR)/tst_common/lib -I$(TST_TS_TOPDIR)/tst_lib
+LDFLAGS       += -L$(TST_TS_TOPDIR)/tst_common/lib -L$(TST_TS_TOPDIR)/tst_lib
+LDFLAGS       += -lm -lrt -lpthread -Wl,--whole-archive -lcommon -ltscommon -Wl,--no-whole-archive

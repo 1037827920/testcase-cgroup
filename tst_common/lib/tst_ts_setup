@@ -1,0 +1,55 @@
+#!/bin/bash
+# Time: 2022-04-19 22:44:25
+# Desc: 测试套公共ts_setup
+
+if [ -d "$TST_TS_TOPDIR/tst_common" ]; then
+    # 先source测试用例自定义的公共文件
+    source "$TST_TS_TOPDIR/tst_lib/ts_common.sh" || exit 1
+    # 再source全局公共文件
+    source "$TST_TS_TOPDIR/tst_common/lib/common.sh" || exit 1
+elif [ -d "$TST_TS_TOPDIR/lib" ]; then
+    # 只是tst_suite_common使用
+    source "$TST_TS_TOPDIR/lib/common.sh" || exit 1
+else
+    echo "can't find the tsuite common file"
+    exit 1
+fi
+
+_ts_setup() {
+    if _is_ts_setup_called; then
+        if [ "$(_get_ts_setup_stat)" == "$TST_PASS" ]; then
+            echo "the ts_setup executed passed yet"
+            return 0
+        else
+            echo "the ts_setup executed yet, but fail"
+            return 1
+        fi
+    fi
+
+    local _tst_ret=0
+
+    if [ -f "$TST_TS_TOPDIR/tst_lib/ts_setup" ]; then
+        if [ -x "$TST_TS_TOPDIR/tst_lib/ts_setup" ]; then
+            msg "try execute $TST_TS_TOPDIR/tst_lib/ts_setup"
+            if "$TST_TS_TOPDIR/tst_lib/ts_setup"; then
+                msg "execute ts_setup success"
+                _set_ts_setup_stat "$TST_PASS"
+            else
+                msg "execute ts_setup fail"
+                _set_ts_setup_stat "$TST_FAIL"
+                _tst_ret=1
+            fi
+        else
+            msg "the $TST_TS_TOPDIR/tst_lib/ts_setup can't execute"
+            _set_ts_setup_stat "$TST_FAIL"
+            _tst_ret=1
+        fi
+    else
+        msg "ts_setup not exist"
+        _set_ts_setup_stat "$TST_PASS"
+    fi
+
+    return $_tst_ret
+}
+
+_ts_setup

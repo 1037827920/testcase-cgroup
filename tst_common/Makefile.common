@@ -1,0 +1,2 @@
+CFLAGS    += -Wall -g -I$(TST_COMMON_TOPDIR)/lib
+LDFLAGS   += -lm -lrt -lpthread -lcommon -L$(TST_COMMON_TOPDIR)/lib

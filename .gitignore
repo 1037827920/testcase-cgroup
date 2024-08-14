@@ -1,0 +1,15 @@
+.idea/
+logs/
+__pycache__/
+*.o
+*.a
+*.d
+*.cmd
+*.test
+*.ko
+*.mod
+*.mod.c
+Module.symvers
+modules.order
+compile_commands.json
+tst_lib/cgroup_util/bin/*

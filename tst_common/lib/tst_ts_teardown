@@ -1,0 +1,47 @@
+#!/bin/bash
+# Time: 2022-04-19 22:44:25
+# Desc: 测试套公共ts_teardown
+
+if [ -d "$TST_TS_TOPDIR/tst_common" ]; then
+    # 先source测试用例自定义的公共文件
+    source "$TST_TS_TOPDIR/tst_lib/ts_common.sh" || exit 1
+    # 再source全局公共文件
+    source "$TST_TS_TOPDIR/tst_common/lib/common.sh" || exit 1
+elif [ -d "$TST_TS_TOPDIR/lib" ]; then
+    # 只是tst_suite_common使用
+    source "$TST_TS_TOPDIR/lib/common.sh" || exit 1
+else
+    echo "can't find the tsuite common file"
+    exit 1
+fi
+
+_ts_teardown() {
+    local _tst_ret=0
+
+    if ! _is_ts_setup_called; then
+        msg "the ts_setup may not execute, we'll not execute the ts_teardown"
+        return 1
+    fi
+
+    if [ -f "$TST_TS_TOPDIR/tst_lib/ts_teardown" ]; then
+        if [ -x "$TST_TS_TOPDIR/tst_lib/ts_teardown" ]; then
+            msg "try execute $TST_TS_TOPDIR/tst_lib/ts_teardown"
+            if ts_teardown; then
+                msg "execute ts_teardown success"
+            else
+                msg "execute ts_teardown fail"
+                _tst_ret=1
+            fi
+        else
+            msg "the $TST_TS_TOPDIR/tst_lib/ts_teardown exist, but can't execute"
+            _tst_ret=1
+        fi
+    else
+        msg "ts_teardown not exist"
+    fi
+    _clean_ts_setup_stat
+
+    return $_tst_ret
+}
+
+_ts_teardown

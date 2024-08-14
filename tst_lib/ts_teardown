@@ -1,0 +1,13 @@
+#!/bin/bash
+# Time: 2022-04-19 22:44:25
+# Desc: ts_teardown
+[ -z "$TST_TS_TOPDIR" ] && export TST_TS_TOPDIR="$(realpath "$(dirname "$0")/..")"
+source "${TST_TS_TOPDIR}/tst_common/lib/common.sh"
+
+ts_teardown() {
+    # 测试套teardown脚本，在这里增加teardown操作
+    msg "this is ts_teardown"
+    return 0
+}
+
+ts_teardown

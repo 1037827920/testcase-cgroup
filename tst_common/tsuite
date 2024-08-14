@@ -1,0 +1,17 @@
+#!/bin/bash
+# 测试套管理工具
+
+TST_TS_TOPDIR=$(realpath "$(dirname "$0")")
+export TST_TS_TOPDIR
+TST_TS_ORI_CWD="$(pwd)"
+export TST_TS_ORI_CWD
+if [ -f "$TST_TS_TOPDIR/tst_common/lib/tsuite_func.sh" ]; then
+    source "$TST_TS_TOPDIR/tst_common/lib/tsuite_func.sh"
+elif [ -f "$TST_TS_TOPDIR/lib/tsuite_func.sh" ]; then
+    source "$TST_TS_TOPDIR/lib/tsuite_func.sh"
+else
+    echo "can't find the tsuite_func.sh file"
+    exit 1
+fi
+
+tsuite_main "$@"
