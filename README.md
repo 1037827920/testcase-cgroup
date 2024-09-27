@@ -1,3 +1,5 @@
+gitee仓库地址：https://gitee.com/LINGYUNXINGZHE/tst-cgroup/tree/test-cgroup/
+
 # tst-cgroup测试套使用文档
 
 ## 运行测试
