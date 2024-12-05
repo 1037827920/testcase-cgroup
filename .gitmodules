@@ -1,3 +1,0 @@
-[submodule "tst_common"]
-	path = tst_common
-	url = https://gitee.com/opencloudos-stream/test-suite-base.git

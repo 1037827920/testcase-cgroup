@@ -1,3 +1,10 @@
+
+- [引言](#引言)
+- [tst-cgroup测试套使用文档](#tst-cgroup测试套使用文档)
+  - [运行测试](#运行测试)
+  - [操作指南](#操作指南)
+  - [其他](#其他)
+
 # 引言
 
 本项目始于[2024腾讯犀牛鸟人才计划](https://opensource.tencent.com/summer-of-code)OpenCloudOS社区的[Testing sig发布的issue](https://gitee.com/OpenCloudOS/contributor_rhino-bird/issues/IA76YL?from=project-issue)。
@@ -11,13 +18,13 @@
 ### 克隆到本地
 
 ```bash
-git clone https://github.com/1037827920/testcase-cgroup.git
+git clone https://github.com/1037827920/tst-cgroup.git
 ```
 
 ### 安装必要的工具
 
 ```bash
-bash install_package.sh
+sudo bash install_package.sh
 ```
 
 ### 编译cgroup util中的程序
