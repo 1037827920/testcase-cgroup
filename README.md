@@ -1,4 +1,8 @@
-gitee仓库地址：https://gitee.com/opencloudos-testing/tst-cgroup
+# 引言
+
+本项目始于[2024腾讯犀牛鸟人才计划](https://opensource.tencent.com/summer-of-code)OpenCloudOS社区的[Testing sig发布的issue](https://gitee.com/OpenCloudOS/contributor_rhino-bird/issues/IA76YL?from=project-issue)。
+
+代码提交在gitee仓库地址：https://gitee.com/opencloudos-testing/tst-cgroup
 
 # tst-cgroup测试套使用文档
 
