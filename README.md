@@ -1,4 +1,4 @@
-gitee仓库地址：https://gitee.com/LINGYUNXINGZHE/tst-cgroup/tree/test-cgroup/
+gitee仓库地址：https://gitee.com/opencloudos-testing/tst-cgroup
 
 # tst-cgroup测试套使用文档
 
