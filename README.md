@@ -7,7 +7,7 @@
 
 # 引言
 
-本项目始于[2024腾讯犀牛鸟人才计划](https://opensource.tencent.com/summer-of-code)OpenCloudOS社区的[Testing sig发布的issue](https://gitee.com/OpenCloudOS/contributor_rhino-bird/issues/IA76YL?from=project-issue)。
+本项目始于[2024腾讯犀牛鸟开源人才计划](https://opensource.tencent.com/summer-of-code)OpenCloudOS社区的[Testing sig发布的issue](https://gitee.com/OpenCloudOS/contributor_rhino-bird/issues/IA76YL?from=project-issue)。
 
 代码提交在gitee仓库地址：https://gitee.com/opencloudos-testing/tst-cgroup
 
@@ -218,4 +218,14 @@ echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ```bash
 ./tsuite list
 ```
+
+### 参考
+
+- [Control Groups version 1 — The Linux Kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v1/index.html)
+- [Control Group v2 — The Linux Kernel documentation](https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html#)
+- [linux/tools/testing/selftests/cgroup at master · torvalds/linux](https://github.com/torvalds/linux/tree/master/tools/testing/selftests/cgroup)
+- [[译\] Control Group v2（cgroupv2 权威指南）（KernelDoc, 2021）](https://arthurchiao.art/blog/cgroupv2-zh/#hugetlb-interface-files)
+- [第 3 章 子系统和可调参数 | Red Hat Product Documentation](https://docs.redhat.com/zh-cn/documentation/red_hat_enterprise_linux/6/html/resource_management_guide/ch-subsystems_and_tunable_parameters#ch-Subsystems_and_Tunable_Parameters)
+- [cgroup 子系统之 net_cls 和 net_prio | ggaaooppeenngg](https://ggaaooppeenngg.github.io/zh-CN/2017/05/19/cgroup-子系统之-net-cls-和-net-prio/)
+
 
